@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:technical_task/assignment1/onboarding/view/onboarding_screen.dart';
-import 'package:technical_task/assignment1/splash/view/splash_screen.dart';
+import 'package:technical_task/assignment2/view/product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: ProductScreen(),
     );
   }
 }
