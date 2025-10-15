@@ -25,8 +25,16 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(children: [Icon(Icons.arrow_back_ios, size: 25)]),
-                SizedBox(height: 20),
+                Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.arrow_back_ios, size: 25),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),                SizedBox(height: 20),
                 CustomText(
                   text: "Reset Password",
                   fontSize: 26,

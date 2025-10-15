@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:technical_task/assignment1/auth/forget/view/forget_password.dart';
 import 'package:technical_task/assignment1/auth/sign_up/view/sign_up_screen.dart';
+import 'package:technical_task/assignment1/enable_location.dart';
 import 'package:technical_task/common_widget/custom_button.dart';
 import 'package:technical_task/common_widget/custom_text.dart';
 import 'package:technical_task/common_widget/custom_text_field.dart';
@@ -135,7 +136,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   text: "Sign In",
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(EnableLocation());
+                  },
                 ),
                 SizedBox(height: 20),
                 Row(

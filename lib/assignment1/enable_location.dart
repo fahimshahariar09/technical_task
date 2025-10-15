@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:technical_task/assignment1/selected_language.dart';
 import 'package:technical_task/common_widget/custom_button.dart';
 import 'package:technical_task/common_widget/custom_text.dart';
 
@@ -37,7 +39,12 @@ class _EnableLocationState extends State<EnableLocation> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 20),
-              CustomButton(text: "Enable", onTap: () {}),
+              CustomButton(
+                text: "Enable",
+                onTap: () {
+                  Get.to(LanguageSelectionScreen());
+                },
+              ),
               SizedBox(height: 20),
               CustomButton(
                 text: "Skip, Not Now",

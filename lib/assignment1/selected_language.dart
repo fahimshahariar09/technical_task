@@ -64,7 +64,6 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (selectedLanguage != null) {
-                      // Navigate to next screen or perform action
                       log('Selected: $selectedLanguage');
                     }
                   },

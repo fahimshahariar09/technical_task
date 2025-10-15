@@ -4,9 +4,10 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:technical_task/assignment3/view/product_page.dart';
+import 'package:technical_task/setting/all_assignment_screen.dart';
 import 'package:technical_task/setting/hive_setting.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   // Called Hive Settings
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductPage(),
+      home: AllAssignmentScreen(),
       builder: EasyLoading.init(),
     );
   }
