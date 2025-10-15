@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:technical_task/assignment1/onboarding/view/onboarding_screen.dart';
 import 'package:technical_task/assignment1/view/splash_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-       home:  SplashScreen(),
+      home: OnBoardingView(),
     );
   }
 }

@@ -11,22 +11,16 @@ class OnBoardingView extends StatelessWidget {
 
   final List<Map<String, String>> onboardingData = [
     {
-      'title': 'Let’s Make Your\nPet A Star!',
+      'title': 'Best online courses\nin the world',
       'description':
-          'Snap, share and shine – Turn every moment, wag, \npurr and cuddle in to a story worth telling.',
+          'Now you can learn anywhere, anytime, even if\nthere is no internet access!',
       'image': 'assets/images/onboarding1.png',
     },
     {
-      'title': 'Woof woof! Welcome\nto FetchFriends',
+      'title': 'Explore your new skill\ntoday',
       'description':
-          'Where every tail wags for a reason! Ready to meet\nfurry friends and their favorite humans? Let’s fetch\nsome fun together!',
+          'Our platform is designed to help you explore\nnew skills. Let’s learn & grow with Eduline!',
       'image': 'assets/images/onboarding2.png',
-    },
-    {
-      'title': 'Ready to Create an\nNew Account',
-      'description':
-          'Snap, share and shine – Turn every moment, wag, purr\nand cuddle in to a story worth telling.',
-      'image': 'assets/images/onboarding3.png',
     },
   ];
 
@@ -39,7 +33,7 @@ class OnBoardingView extends StatelessWidget {
           gradient: LinearGradient(
             end: Alignment.topRight,
             begin: Alignment.bottomLeft,
-            colors: [Color(0xFFE7B10A), Color(0x0ff9d949)],
+            colors: [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
           ),
         ),
         child: SafeArea(
@@ -66,20 +60,20 @@ class OnBoardingView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Image.asset(
-                              height: 286,
-                              width: 300,
+                              height: 327,
+                              width: 327,
                               onboardingData[index]['image']!,
                               fit: BoxFit
                                   .contain, // Show full image without cropping
                             ),
                           ),
-                          SizedBox(height: 70),
+                          SizedBox(height: 40),
                           // Title
                           CustomText(
                             text: onboardingData[index]['title']!,
                             fontSize: 28,
                             fontWeight: FontWeight.w700,
-                            fontColor: AppColors.white,
+                            fontColor: AppColors.black,
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
@@ -88,7 +82,7 @@ class OnBoardingView extends StatelessWidget {
                             text: onboardingData[index]['description']!,
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: AppColors.white,
+                            fontColor: AppColors.grey,
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -96,40 +90,7 @@ class OnBoardingView extends StatelessWidget {
                     },
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 35),
-                  child: Obx(
-                    () => Column(
-                      children: [
-                        //Button For Next
-                        ElevatedButton(
-                          onPressed: () {
-                            if (controller.currentPage.value ==
-                                onboardingData.length - 1) {
-                              //Get.offAllNamed('/WelcomeView');
-                              Get.to(SelectRoleView());
-                            } else {
-                              controller.nextPage();
-                            }
-                          },
-
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.fullblack,
-                            foregroundColor: AppColors.white,
-                            padding: EdgeInsets.all(25),
-                            minimumSize: Size(50, 15), // Full width
-                          ),
-                          child:
-                              controller.currentPage.value ==
-                                  onboardingData.length - 1
-                              ? Icon(Icons.arrow_forward_rounded, size: 25)
-                              : Icon(Icons.arrow_forward_rounded, size: 25),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 40),
+                SizedBox(height: 20),
                 // Dots Indicator
                 Obx(
                   () => Row(
@@ -142,7 +103,7 @@ class OnBoardingView extends StatelessWidget {
                         height: 8,
                         decoration: BoxDecoration(
                           color: controller.currentPage.value == index
-                              ? AppColors.white
+                              ? AppColors.blue
                               : Colors.grey,
                           borderRadius: BorderRadius.circular(4),
                         ),
@@ -150,8 +111,47 @@ class OnBoardingView extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 80),
+                SizedBox(height: 20),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 35),
+                  child: Obx(
+                    () => Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            if (controller.currentPage.value ==
+                                onboardingData.length - 1) {
+                              //Get.offAllNamed('/WelcomeView');
+                              //Get.to(SelectRoleView());
+                            } else {
+                              controller.nextPage();
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.blue,
+                            foregroundColor: AppColors.white,
+                            padding: EdgeInsets.all(25),
+                            minimumSize: Size(
+                              double.infinity,
+                              48,
+                            ), // Full width
+                          ),
+                          child: CustomText(
+                            text:
+                                controller.currentPage.value ==
+                                    onboardingData.length - 1
+                                ? 'Get Started'
+                                : 'Next',
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            fontColor: AppColors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
               ],
             ),
           ),
