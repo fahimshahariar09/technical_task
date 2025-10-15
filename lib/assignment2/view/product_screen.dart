@@ -13,8 +13,10 @@ class ProductScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text("Product Screen"),
+        scrolledUnderElevation: 0,
         centerTitle: true,
       ),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
