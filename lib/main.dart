@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:technical_task/assignment1/auth/sign_in/view/sign_in_screen.dart';
-import 'package:technical_task/assignment1/auth/sign_up/view/sign_up_screen.dart';
+import 'package:get/get.dart';
+import 'package:technical_task/assignment1/onboarding/view/onboarding_screen.dart';
+import 'package:technical_task/assignment1/splash/view/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SignUpScreen());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
   }
 }

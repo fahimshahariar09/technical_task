@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:technical_task/assignment1/auth/forget/view/forget_password.dart';
+import 'package:technical_task/assignment1/auth/sign_up/view/sign_up_screen.dart';
 import 'package:technical_task/common_widget/custom_button.dart';
 import 'package:technical_task/common_widget/custom_text.dart';
 import 'package:technical_task/common_widget/custom_text_field.dart';
@@ -20,11 +23,12 @@ class _SignInScreenState extends State<SignInScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(height: 10,),
                 Image.asset(AppImages.sign, height: 70, width: 70),
                 SizedBox(height: 15),
                 CustomText(
@@ -40,7 +44,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   fontWeight: FontWeight.w400,
                   fontSize: 14,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 Row(
                   children: [
                     CustomText(
@@ -66,7 +70,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 Row(
                   children: [
                     CustomText(
@@ -113,11 +117,16 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ],
                     ),
-                    CustomText(
-                      text: "Forgot Password",
-                      fontWeight: FontWeight.w500,
-                      fontColor: AppColors.grey,
-                      fontSize: 15,
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(ForgetPasswordScreen());
+                      },
+                      child: CustomText(
+                        text: "Forgot Password",
+                        fontWeight: FontWeight.w500,
+                        fontColor: AppColors.grey,
+                        fontSize: 15,
+                      ),
                     ),
                   ],
                 ),
@@ -138,11 +147,16 @@ class _SignInScreenState extends State<SignInScreen> {
                       fontSize: 15,
                       fontColor: AppColors.grey,
                     ),
-                    CustomText(
-                      text: "Create Account",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15,
-                      fontColor: AppColors.blue,
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(SignUpScreen());
+                      },
+                      child: CustomText(
+                        text: " Create Account",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                        fontColor: AppColors.blue,
+                      ),
                     ),
                   ],
                 ),

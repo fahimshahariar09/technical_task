@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:technical_task/assignment1/auth/sign_in/view/sign_in_screen.dart';
+import 'package:technical_task/assignment1/auth/sign_up/view/success_dialog.dart';
 import 'package:technical_task/common_widget/custom_button.dart';
 import 'package:technical_task/common_widget/custom_text.dart';
 import 'package:technical_task/common_widget/custom_text_field.dart';
@@ -22,7 +25,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(Icons.arrow_back_ios, size: 30),
+              IconButton(
+                icon: Icon(Icons.arrow_back_ios, size: 25),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
               SizedBox(height: 15),
               CustomText(
                 text: "Welcome Back!",
@@ -39,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 fontSize: 14,
                 textAlign: TextAlign.start,
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 30),
               Row(
                 children: [
                   CustomText(
@@ -50,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               CustomTextFormField(
                 hintText: 'pristia@gmail.com',
                 validator: (value) {
@@ -65,7 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Row(
                 children: [
                   CustomText(
@@ -76,7 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               CustomTextFormField(
                 hintText: 'Pristia Candra',
                 validator: (value) {
@@ -86,7 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Row(
                 children: [
                   CustomText(
@@ -97,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               CustomTextFormField(
                 hintText: 'Password',
                 isPassword: true,
@@ -116,7 +124,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 text: "Label",
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                onTap: () {},
+                onTap: () {
+                  Get.dialog(SuccessDialog());
+                },
               ),
               SizedBox(height: 20),
               Row(
@@ -128,11 +138,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontSize: 15,
                     fontColor: AppColors.grey,
                   ),
-                  CustomText(
-                    text: "Sign In",
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
-                    fontColor: AppColors.blue,
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(SignInScreen());
+                    },
+                    child: CustomText(
+                      text: " Sign In",
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                      fontColor: AppColors.blue,
+                    ),
                   ),
                 ],
               ),

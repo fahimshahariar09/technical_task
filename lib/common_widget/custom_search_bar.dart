@@ -4,7 +4,7 @@ class CommonSearchBar extends StatelessWidget {
   const CommonSearchBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext  context) {
     return SizedBox(
       height: 45,
       width: 280,

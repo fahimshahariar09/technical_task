@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:technical_task/assignment1/auth/sign_up/view/sign_up_screen.dart';
 import 'package:technical_task/assignment1/onboarding/controller/onboarding.dart';
 import 'package:technical_task/common_widget/custom_text.dart';
 import 'package:technical_task/constant/app_color.dart';
@@ -42,7 +43,6 @@ class OnBoardingView extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 50),
-                // Details of On Boarding Screen
                 Expanded(
                   child: PageView.builder(
                     controller: controller.pageController,
@@ -52,10 +52,9 @@ class OnBoardingView extends StatelessWidget {
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // Image
                           Container(
-                            height: 200, // Reduced height
-                            width: 300, // Reduced width
+                            height: 200,
+                            width: 300,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -63,12 +62,10 @@ class OnBoardingView extends StatelessWidget {
                               height: 327,
                               width: 327,
                               onboardingData[index]['image']!,
-                              fit: BoxFit
-                                  .contain, // Show full image without cropping
+                              fit: BoxFit.contain,
                             ),
                           ),
                           SizedBox(height: 40),
-                          // Title
                           CustomText(
                             text: onboardingData[index]['title']!,
                             fontSize: 28,
@@ -77,7 +74,6 @@ class OnBoardingView extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
-                          // Description
                           CustomText(
                             text: onboardingData[index]['description']!,
                             fontSize: 15,
@@ -91,7 +87,6 @@ class OnBoardingView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                // Dots Indicator
                 Obx(
                   () => Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -121,8 +116,7 @@ class OnBoardingView extends StatelessWidget {
                           onPressed: () {
                             if (controller.currentPage.value ==
                                 onboardingData.length - 1) {
-                              //Get.offAllNamed('/WelcomeView');
-                              //Get.to(SelectRoleView());
+                              Get.to(SignUpScreen());
                             } else {
                               controller.nextPage();
                             }
@@ -130,11 +124,8 @@ class OnBoardingView extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.blue,
                             foregroundColor: AppColors.white,
-                            padding: EdgeInsets.all(25),
-                            minimumSize: Size(
-                              double.infinity,
-                              48,
-                            ), // Full width
+                            padding: EdgeInsets.all(20),
+                            minimumSize: Size(double.infinity, 40),
                           ),
                           child: CustomText(
                             text:
